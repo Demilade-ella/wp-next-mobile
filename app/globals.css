@@ -1,26 +1,102 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-main: #f8fafc;
+  --surface-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-subtle: #e2e8f0;
+
+  /* Brand & Accents */
+  --primary-brand: #1e293b;
+  --primary-brand-hover: #0f172a;
+  
+  --accent-emergency: #e11d48;
+  --accent-emergency-hover: #be123c;
+  --accent-emergency-bg: #fff1f2;
+  
+  --accent-success: #059669;
+  --accent-success-bg: #ecfdf5;
+
+  --accent-warning: #d97706;
+  --accent-warning-bg: #fffbe0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* App Container Layout */
+.app-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  justify-content: space-between;
+  max-width: 440px;
+  margin: 0 auto;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+  position: relative;
+  padding: 90px 12px;
+  /* padding-top: 40px; */
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.feed-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.refresh-btn {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  color: #1e293b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.refresh-btn:hover {
+  text-decoration: underline;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.loading-text {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.empty-text {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.875rem;
+  color: #64748b;
 }
