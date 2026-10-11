@@ -7,9 +7,14 @@
   "theme_color": "#1e293b",
   "icons": [
     {
-      "src": "/icon.png",
+      "src": "/window.svg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/svg"
     }
-  ]
+  ],
+  "dir": "auto",
+  "lang": "en",
+  "orientation": "natural",
+  "id": "/",
+  "description": "A secure citizen reporting platform to submit and track community issues."
 }
